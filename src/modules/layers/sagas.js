@@ -3,6 +3,7 @@ import DATA from 'config/data';
 import { activeWidgets as _activeWidgets } from 'modules/widgets/selectors';
 import { fetchSucceeded, toggleActive } from './actions';
 
+
 export function* toggleActiveLayer({ payload }) {
   yield put(toggleActive({ id: payload.layerId, isActive: payload.isActive }));
 }

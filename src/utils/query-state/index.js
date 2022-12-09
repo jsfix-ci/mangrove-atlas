@@ -11,7 +11,6 @@ import get from "lodash/get";
 import { redirect } from "redux-first-router";
 
 import { setViewport } from "modules/map/actions";
-import { activeWidgets } from 'modules/widgets/selectors';
 import { decodeUrlForState, encodeStateForUrl } from "./stateToUrl";
 import { ACTIONS } from "./constants";
 
@@ -83,8 +82,8 @@ class QueryStateManager {
         const actionListener = function* actionListener() {
 
           const state = yield select();
-          const activeLayers = activeWidgets(state).map((l) => l.slug).join(',');
 
+          const activeLayers = state?.widgets?.list.filter((l) => !!l.isActive).map((l) => l.slug).join(',');
 
           const { router, dashboards } = state;
 

@@ -40,6 +40,7 @@ export function* restoreWidgetsState() {
           if (update.isActive) {
             const widgetActions = [];
 
+
             // Activate the widget
             updatedWidget.isActive = true;
             widgetActions.push(put(toggleActive({
@@ -83,4 +84,5 @@ function* handleWidgetsMenu() {
 export default function* widgetsSagas() {
   yield takeLatest(fetchLayers().type, getWidgets);
   yield takeLatest(setCurrent, handleWidgetsMenu);
+  yield takeLatest('WIDGET/TOGGLE_ACTIVE', restoreWidgetsState);
 }
