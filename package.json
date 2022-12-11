@@ -22,7 +22,7 @@
     "lodash": "^4.17.21",
     "moment": "^2.29.2",
     "prop-types": "^15.7.2",
-    "query-string": "^6.5.0",
+    "query-string": "^7.1.3",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.9",
     "react-csv": "^1.1.1",
